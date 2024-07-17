@@ -2,6 +2,7 @@
 
 ## Требования
 Docker + docker-compose
+Python => 3.9
 ```sh
 pip install -r requirements.txt
 ```
