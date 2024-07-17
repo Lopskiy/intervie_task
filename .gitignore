@@ -1,0 +1,8 @@
+*.DS_Store
+.vscode/
+__pycache__
+.cache/
+.pytest_cache/
+.ropeproject/
+tmp*
+*.log
