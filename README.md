@@ -71,5 +71,21 @@ body:
 ```
 Рассчет кварплаты
 http://localhost:8000/api/calculate_rent/2/3/2024/
+Ответ
+```sh
+{
+    "task_id": "ead469d4-0267-4b15-ad7d-a8766556108b",
+    "status": "Calculation started"
+}
+```
 Запишется в базе 
+Проаверка статуса задачи
+http://localhost:8000/api/progress/ead469d4-0267-4b15-ad7d-a8766556108b/
+Ответ
+```sh
+{
+    "status": "COMPLETED",
+    "result": "Calculation completed for house 456 Elm St for 3/2024 total_cost 13975.9500"
+}
+```
 Прогресс выполнения задачи можно отслеживать через Celery Flower или другие инструменты мониторинга Celery.

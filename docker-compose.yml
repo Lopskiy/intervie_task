@@ -4,7 +4,7 @@ services:
   db:
     image: postgres:13
     volumes:
-      - postgres_data15:/var/lib/postgresql/data/
+      - postgres_data16:/var/lib/postgresql/data/
     environment:
       POSTGRES_DB: mydb
       POSTGRES_USER: myuser
@@ -46,4 +46,4 @@ services:
       - web
 
 volumes:
-  postgres_data15:
+  postgres_data16:

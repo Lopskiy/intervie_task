@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import HouseViewSet, ApartmentViewSet, WaterMeterViewSet, WaterMeterReadingViewSet, TariffViewSet, MonthlyBillViewSet
+from .views import HouseViewSet, ApartmentViewSet, WaterMeterViewSet, WaterMeterReadingViewSet, TariffViewSet, MonthlyBillViewSet, CalculationProgressView
 
 router = DefaultRouter()
 router.register(r'houses', HouseViewSet)
@@ -12,4 +12,5 @@ router.register(r'tariffs', TariffViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('calculate_rent/<int:house_id>/<int:month>/<int:year>/', MonthlyBillViewSet.as_view(), name='calculate_rent'),
+    path('progress/<str:task_id>/', CalculationProgressView.as_view(), name='calculation-progress')
 ]
